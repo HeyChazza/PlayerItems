@@ -1,8 +1,11 @@
-name: FeluxItems
+name: ${project.name}
 version: ${project.version}
-main: io.felux.items.FeluxItems
-api-version: 1.13
-prefix: FI
-authors: [Felux]
-description: A simple, easy to use plugin for binding commands to items.
+main: ${package}
+author: "Felux"
 website: https://felux.io/
+description: ${project.descriptionó}
+softdepend: ["PlaceholderAPI", "WorldGuard"]
+
+commands:
+  feluxitems:
+    aliases: ["fitems", "vouchers", "coupons"]

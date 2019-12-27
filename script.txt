@@ -1,0 +1,35 @@
+classpath     "%classpathLibs%"
+              "%compileArtifactPath%"
+              "%pluginArtifactPath%";
+open          "server/plugins/%project.build.finalName%.%project.packaging%"
+                ;
+
+stringEncryptionExclude
+              io.felux.items.FeluxItems;
+
+trimExclude   *.* @*.EventHandler *(*);
+
+exclude       io.felux.items. and
+              io.felux.items.FeluxItems and
+
+              io.felux.items.api. and
+              io.felux.items.api.* and
+              io.felux.items.api.* * and
+              io.felux.items.api.* * (*)
+              ;
+
+obfuscate   obfuscateFlow=extraAggressive
+            encryptStringLiterals=enhanced
+            mixedCaseClassNames=true
+            aggressiveMethodRenaming=true
+            hideFieldNames=true
+            uniqueClassNames=true
+            randomize=true
+            localVariables=obfuscate
+            lineNumbers=scramble
+            autoReflectionHandling=normal
+            lineNumbers=scramble
+            collapsePackagesWithDefault="$$Skid$$"
+            newNamesPrefix="$$GL_HAVE_FUN_SKID$$";
+
+saveAll     "server/plugins/%project.build.finalName%.%project.packaging%";

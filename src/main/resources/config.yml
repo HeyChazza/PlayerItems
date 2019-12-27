@@ -1,0 +1,26 @@
+## ${project.name} - v${project.version}
+## ${project.description}
+
+items:
+  # This is the items identifier, it needs to be unique.
+  example:
+    # This is the core settings for your item, e.g.
+    # the name, lore and material type.
+    item:
+      name: "&aExample Item"
+      lore:
+        - '&7Right click to redeem!'
+      type: PAPER
+      data: 0
+    # These are the settings for this item, such as
+    # the commands to run and limit per voucher.
+    settings:
+      commands:
+        - 'asa addmultiplier %player% 3.0 1h'
+      # These define the areas where this item cannot
+      # be redeemed, useful for PvP areas for example.
+      blacklist:
+        worlds:
+          - 'some_bad_world'
+        regions:
+          - 'some_bad_region'
