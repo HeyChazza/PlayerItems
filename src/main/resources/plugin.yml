@@ -1,0 +1,8 @@
+name: FeluxItems
+version: ${project.version}
+main: io.felux.items.FeluxItems
+api-version: 1.13
+prefix: FI
+authors: [Felux]
+description: A simple, easy to use plugin for binding commands to items.
+website: https://felux.io/
