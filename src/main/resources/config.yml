@@ -12,6 +12,7 @@ items:
         - '&7Right click to redeem!'
       type: PAPER
       data: 0
+      glow: true
     # These are the settings for this item, such as
     # the commands to run and limit per voucher.
     settings:

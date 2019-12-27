@@ -1,7 +1,6 @@
 package io.felux.items.listener;
 
 import io.felux.items.api.FeluxItem;
-import io.felux.items.api.ItemRedeemEvent;
 import io.felux.items.hook.WorldGuardHook;
 import io.felux.items.util.Lang;
 import org.bukkit.Bukkit;
@@ -51,24 +50,9 @@ public class InteractListener implements Listener {
             }
         }
 
-        ItemRedeemEvent pouchRedeemEvent = new ItemRedeemEvent(player, item, itemStack);
-        Bukkit.getServer().getPluginManager().callEvent(pouchRedeemEvent);
-    }
+        if (itemStack.getAmount() == 1) player.setItemInHand(null);
+        else player.getItemInHand().setAmount(itemStack.getAmount() - 1);
 
-    @SuppressWarnings("deprecation")
-    @EventHandler
-    public void onPouchRedeem(ItemRedeemEvent e) {
-        if (e.isCancelled()) {
-            return;
-        }
-
-        Player player = e.getPlayer();
-        FeluxItem pouch = e.getItem();
-        ItemStack pouchItem = e.getItemStack();
-
-        if (pouchItem.getAmount() == 1) player.setItemInHand(null);
-        else player.getItemInHand().setAmount(pouchItem.getAmount() - 1);
-
-        pouch.runCommands(player);
+        item.runCommands(player);
     }
 }
